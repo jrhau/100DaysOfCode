@@ -20,4 +20,4 @@ n_people = int(input("How many people to split the bill? "))
 
 amount_per_person = bill * tip / n_people
 
-print(f"Each person should pay: ${amount_per_person:0.2f}\n")
+print(f"Each person should pay: ${round(amount_per_person,2):0.2f}\n")
