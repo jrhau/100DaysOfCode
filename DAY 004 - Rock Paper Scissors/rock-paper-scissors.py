@@ -27,6 +27,8 @@ while(input(play_msg).lower() == "y"):
 
   print_result(choices[p1], pc)
 
+  # Using a circular logic where I compare if my choice is located
+  # before or after the computer choice in my choices list.
   if choices[p1] == pc:
     print("This is a DRAW!")
   elif choices[p1 -1] == pc:
