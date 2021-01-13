@@ -17,9 +17,9 @@ nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 # Using list comprehension which uses for loop
-password =  [random.choice(letters) for letter in range(nr_letters)]
-password += [random.choice(symbols) for symbol in range(nr_symbols)]
-password += [random.choice(numbers) for number in range(nr_numbers)]
+password =  [random.choice(letters) for _ in range(nr_letters)]
+password += [random.choice(symbols) for _ in range(nr_symbols)]
+password += [random.choice(numbers) for _ in range(nr_numbers)]
 
 # Shuffle in place a list
 random.shuffle(password)
