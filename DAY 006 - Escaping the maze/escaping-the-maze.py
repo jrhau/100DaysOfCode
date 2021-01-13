@@ -20,10 +20,15 @@ def move_right():
     move()
     if right_is_clear():
         turn_right()
+        
+# Let's found our first wall and lean on it
+while front_is_clear() and not at_goal():
+    move()
+while right_is_clear():
+    turn_right()
     
+# Move forward while seeking the right
 while not at_goal():
-    # Everytime we move, check if we are at goal
     while front_is_clear() and not at_goal():
         move_right()
-
     turn_left() if right_corner() else turn_right()
