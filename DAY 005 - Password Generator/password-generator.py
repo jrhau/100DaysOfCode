@@ -16,12 +16,6 @@ nr_letters= int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-#Eazy Level - Order not randomised:
-#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-
-#Hard Level - Order of characters randomised:
-#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
-
 # Using list comprehension which uses for loop
 password =  [random.choice(letters) for letter in range(nr_letters)]
 password += [random.choice(symbols) for symbol in range(nr_symbols)]
