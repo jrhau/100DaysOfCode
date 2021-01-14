@@ -31,6 +31,14 @@ operations = {
   "/": divide,
 }
 
+def real(num):
+  """
+  return the number in a string format with a 2 decimal precision.
+  If the decimal part is 00, return only the whole part.
+  """
+  whole, decimal = f"{num:0.2f}".split(".")
+  return f"{num:0.2f}" if decimal != "00" else whole
+
 def calculation():
   previous_answer = None
   keep_going = True
@@ -40,7 +48,7 @@ def calculation():
     # Using != to avoid case where the previous answer was 0
     if previous_answer != None:
       num1 = previous_answer
-      print(f"Your previous answer was: {num1:0.2f}")
+      print(f"Your previous answer was: {real(num1)}")
     else:
       num1 = float(input("What's the first number?: "))
 
@@ -53,7 +61,7 @@ def calculation():
     func = operations[operation_symbol]
 
     answer = func(num1, num2)
-    print(f"\n{num1:0.2f} {operation_symbol} {num2:0.2f} = {answer:0.2f}\n")
+    print(f"\n{real(num1)} {operation_symbol} {real(num2)} = {real(answer)}\n")
 
     msg = "Type 'y' to continue from the previous answer"
     msg += "\nType 'n' for a new calculation"
