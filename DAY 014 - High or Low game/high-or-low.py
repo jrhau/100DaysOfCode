@@ -59,12 +59,13 @@ while(input(play_msg).lower() == "y"):
         input("I understand...")
 
 
-    if (answer == "a" and fight[0]["follower_count"] >= fight[1]["follower_count"]) or (answer == "b" and fight[1]["follower_count"] >= fight[0]["follower_count"]):
+    if (answer == "a" and fight[0]["follower_count"] >= fight[1]["follower_count"]) \
+    or (answer == "b" and fight[1]["follower_count"] >= fight[0]["follower_count"]):
       score += 1
       print(f"\nYour are right! You have {score} points.")
       input("Continue...")
 
-      # Remove fighter A and add a new fighter at the end of list
+      # Remove fighter A
       fight.pop(0)
     else: 
       print("\nYou are wrong...")
