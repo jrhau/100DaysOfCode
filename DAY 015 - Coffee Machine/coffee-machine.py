@@ -87,7 +87,7 @@ def reset_screen() -> None:
     print("=" * 80)
 
 
-def help():
+def help() -> None:
     """Display the available commands"""
     print("*"*40)
     print("The available commands are:\n")
@@ -101,7 +101,7 @@ def help():
     print("*"*40)
 
 
-def menu():
+def menu() -> None:
     """Display the items on the menu."""
     print("*"*40)
     [print(f"{item :>10}: {MENU[item]['cost']:0.2f}$") for item in MENU]
@@ -134,7 +134,7 @@ def verify_resources(water: int = 0, milk: int = 0, coffee: int = 0) -> bool:
     ])
 
 
-def order(item: str) -> float:
+def order(item: str) -> None:
     """Process an order and return the change"""
 
     # Checking if the drink requested is on the menu
@@ -178,7 +178,7 @@ def order(item: str) -> float:
         print(f"'{item}' is not on the menu.")
 
 
-def insert_coins() -> dict:
+def insert_coins() -> None:
     """Capturing user coins for purchase."""
     try:
         print("\nPlease, insert your coins.")
@@ -196,14 +196,14 @@ def insert_coins() -> dict:
             "dime": dimes,
             "quarter": quarters
         }
-        
+
         resources["intake"] += calculate_coins(**coins)
         print(f"\nThe intake now contains {resources['intake']:0.2f}$")
     except:
         print("Each coins must be a positive integer.")
 
 
-def refill_resources() -> dict:
+def refill_resources() -> None:
     """Replenish the Coffee Machine resources"""
     try:
         print("\nPlease, insert your coins.")
@@ -230,7 +230,7 @@ def refill_resources() -> dict:
         print("You have to enter a positive whole number.")
 
 
-def return_change():
+def return_change() -> None:
     """Returning the accumulated money of the Coffee Machine intake bin."""
     print(f"Returning {resources['intake']:0.2f}$")
     resources["intake"] = 0
