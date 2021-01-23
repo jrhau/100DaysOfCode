@@ -15,14 +15,14 @@ menu = Menu()
 is_on = True
 while is_on:
 
-    choice = input("What would you like? (espresso/latte/cappuccino/): ").lower()
+    choice = input(f"What would you like? ({menu.get_items()}): ").lower()
 
     if choice == "off":
         is_on = False
-    if choice == "report":
+    elif choice == "report":
         cm.report()
         mm.report()
-    if choice in ["espresso", "latte", "cappuccino"]:
+    elif choice in menu.get_items().split("/"):
         drink = menu.find_drink(choice)
         if cm.is_resource_sufficient(drink):
             if mm.make_payment(drink.cost):
