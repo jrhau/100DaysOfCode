@@ -14,7 +14,7 @@ import time
 SCREEN_BG = "black"
 SCREEN_SIZE = (600,600)
 SCREEN_REFRESH_RATE = 0.1
-SCREEN_TITLE = "DAY 020 - Snake Game -part 1"
+SCREEN_TITLE = "DAY 021 - Snake Game -part 1"
 
 screen = Screen()
 
